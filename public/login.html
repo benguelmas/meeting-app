@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Konferansa Katıl</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <h2>Konferansa Katıl</h2>
+    <input type="text" id="username" placeholder="Kullanıcı Adı">
+    <input type="text" id="room" placeholder="Oda Kodu">
+    <input type="password" id="password" placeholder="Şifre">
+    <button onclick="joinRoom()">Katıl</button>
+  </div>
+
+  <script>
+    function joinRoom() {
+      const username = document.getElementById("username").value;
+      const room = document.getElementById("room").value;
+      const password = document.getElementById("password").value;
+
+      if (username && room && password) {
+        const url = `index.html?username=${encodeURIComponent(username)}&room=${encodeURIComponent(room)}&password=${encodeURIComponent(password)}`;
+        window.location.href = url;
+      } else {
+        alert("Lütfen tüm alanları doldurun.");
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sohbet Odası</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="theme-btn">🌙 Koyu Mod</button>
+  <div id="timer" class="timer">40:00</div>
+  <div class="main-container">
+    <div class="video-grid" id="video-grid"></div>
+    <div class="side-panel">
+      <h2>Katılımcılar (<span id="user-count">0</span>)</h2>
+      <ul id="user-list"></ul>
+      <h2>Sohbet</h2>
+      <div id="chat-box"></div>
+      <form id="chat-form">
+        <input type="text" id="chat-input" placeholder="Mesaj yaz..." required />
+        <button type="submit">Gönder</button>
+      </form>
+      <div class="controls-bar">
+        <button id="cameraBtn">Kamerayı Kapat</button>
+        <button id="micBtn">Mikrofonu Kapat</button>
+        <button id="screenShareBtn">Ekranı Paylaş</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+  <script src="https://unpkg.com/simple-peer@9.11.1/simplepeer.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

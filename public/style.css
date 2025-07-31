@@ -1,0 +1,376 @@
+:root {
+  --primary: #9c27b0;
+  --text: #222;
+  --background-light: #f4f4f7;
+  --background-dark: #1a1a1a;
+  --text-light: #111;
+  --text-dark: #f1f1f1;
+  --timer-bg-light: rgba(0, 0, 0, 0.1);
+  --timer-text-light: #333;
+  --timer-bg-dark: rgba(255, 255, 255, 0.1);
+  --timer-text-dark: #fff;
+}
+
+[data-theme="light"] {
+  --background: var(--background-light);
+  --text: var(--text-light);
+  --timer-bg: var(--timer-bg-light);
+  --timer-text: var(--timer-text-light);
+}
+
+[data-theme="dark"] {
+  --background: var(--background-dark);
+  --text: var(--text-light);
+  --timer-bg: var(--timer-bg-dark);
+  --timer-text: var(--timer-text-dark);
+}
+
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+
+.login-container {
+  width: 300px;
+  margin: 100px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.login-container button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.timer {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  font-weight: 700;
+  background: var(--timer-bg);
+  color: var(--timer-text);
+  padding: 4px 12px;
+  border-radius: 12px;
+  z-index: 9999;
+  user-select: none;
+  letter-spacing: 1px;
+  transition: background 0.3s, color 0.3s;
+}
+
+
+.main-container {
+  flex: 1;
+  display: flex;
+  gap: 20px;
+  padding: 60px 30px 80px 30px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-wrap: nowrap;
+}
+
+/* Video grid */
+.video-grid {
+  flex: 3;
+  display: grid;
+  gap: 12px;
+  overflow-y: auto;
+  background: #181818;
+  padding: 12px;
+  border-radius: 10px;
+  overflow-x: hidden;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+/* Grid ayarları, JS tarafındaki class'larla uyumlu */
+
+/* Tek kişi: tam genişlik */
+.grid-1 {
+  grid-template-columns: 1fr !important;
+}
+
+/* 2 kişi: 2 sütun */
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* 3-4 kişi: 3 sütun */
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+/* 5 ve üzeri: 4 sütun */
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr) !important;
+}
+
+/* Video kutuları */
+.video-container {
+  position: relative;
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Kullanıcı adı etiketi */
+.user-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Mikrofon ve kamera ikonları */
+.status-icons {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  display: flex;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.status-icons .icon {
+  width: 18px;
+  height: 18px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #fff;
+  position: relative;
+}
+
+.status-icons .icon.off::after {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 10px;
+  height: 1.5px;
+  background: red;
+  transform: rotate(-45deg);
+}
+
+.status-icons .cam-icon::before {
+  content: '📷';
+}
+
+.status-icons .mic-icon::before {
+  content: '🎤';
+}
+
+/* Yan panel */
+.side-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(145deg, #2c003e, #4b0082); /* Mor degrade arka plan */
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: inset 0 0 10px #00000044, 0 0 10px #00000033;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  border: 2px dashed #ffffff33;
+}
+
+
+.side-panel h2 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffc107; /* Sarı vurgu */
+  border-bottom: 2px dotted #fff;
+  padding-bottom: 4px;
+}
+
+#user-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+#user-list li {
+  padding: 2px 0;
+}
+
+#chat-box {
+  flex-grow: 1;
+  background: #ffffffdd;
+  border-radius: 10px;
+  padding: 10px;
+  color: #111;
+  font-size: 0.9rem;
+  font-family: 'Verdana', sans-serif;
+  box-shadow: inset 0 0 8px #00000022;
+}
+
+
+#chat-box div {
+  margin-bottom: 4px;
+}
+
+#chat-form {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+#chat-form button {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#chat-form button:hover {
+  background: #7b1fa2;
+}
+
+.controls-bar {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.controls-bar button {
+  background: #00bcd4;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.controls-bar button:hover {
+  transform: scale(1.05);
+  background-color: #0097a7;
+}
+
+
+#theme-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Responsive: mobilde tek sütun */
+@media (max-width: 600px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px 10px 40px 10px;
+  }
+  .video-grid {
+    grid-template-columns: 1fr !important;
+    height: 300px;
+  }
+  .side-panel {
+    flex: none;
+    height: 300px;
+    margin-top: 15px;
+  }
+}
+.status-icons .icon.cam-icon::before {
+  content: '📷';
+  font-size: 18px;
+}
+
+.status-icons .icon.cam-icon.off::before {
+  content: '🚫📷';
+  font-size: 18px;
+}
+
+.status-icons .icon.mic-icon::before {
+  content: '🎤';
+  font-size: 18px;
+}
+
+.status-icons .icon.mic-icon.off::before {
+  content: '🚫🎤';
+  font-size: 18px;
+}
+
