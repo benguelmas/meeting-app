@@ -1,59 +1,61 @@
-# 📞 Toplantı Uygulaması
+# 📞 Meeting Application
 
-Bu proje, **WebRTC**, **Socket.IO** ve **Node.js** kullanılarak geliştirilmiş basit bir video konferans uygulamasıdır. Kullanıcılar gerçek zamanlı olarak sesli/görüntülü görüşme yapabilir, mesajlaşabilir ve odalara katılabilir.
+This is a simple video conferencing application built using **WebRTC**, **Socket.IO**, and **Node.js**.  
+Users can join rooms to communicate via real-time audio/video and send messages.
 
-## 🚀 Özellikler
+## 🚀 Features
 
-- ✅ Gerçek zamanlı video/ses iletimi (WebRTC)
-- ✅ Kullanıcı girişleri ve odalara katılım
-- ✅ Katılımcı listesi ve sayısı
-- ✅ Anlık mesajlaşma (chat)
-- ✅ Ngrok ile herkese açık bağlantı oluşturma
+- ✅ Real-time video/audio communication (WebRTC)  
+- ✅ User login and room joining  
+- ✅ Participant list and count  
+- ✅ Instant messaging (chat)  
+- ✅ Public access via Ngrok tunnel
 
 ---
 
-## ⚙️ Kurulum ve Çalıştırma
+## ⚙️ Installation and Running the Project
 
-### 1. Depoyu Klonla
+### 1. Clone the Repository
 
-```bash
-git clone https://github.com/benguelmas/meeting-uygulamasi.git
-cd meeting-uygulamasi
+bash
+git clone https://github.com/benguelmas/meeting-app.git
+cd meeting-app
 
-2. Bağımlılıkları Kur
+
+### 2. Install Dependencies
 
 npm install
 
-3. Sunucuyu Başlat
+### 3. Start the Server
 
 node server.js
 
-Artık uygulaman http://localhost:3000 adresinde çalışıyor olacak.
+Now, the application will be running at http://localhost:3000.
 
-🌐 Uygulamayı Başkalarına Açmak (Ngrok Kullanımı)
-Ngrok, localhost’taki uygulamayı geçici olarak internet üzerinden erişilebilir hale getirir.
+🌐 Make It Public with Ngrok
+Ngrok allows you to make your local server temporarily accessible from the internet.
 
-##🔧 Ngrok Kurulumu
-https://ngrok.com/download adresinden uygun sürümü indir.
+🔧 Install Ngrok
+Download the appropriate version from: https://ngrok.com/download
 
-.zip dosyasını çıkar, ngrok.exe dosyasını klasörüne koy.
+Unzip the file and place ngrok.exe in your project folder.
 
-Terminalden şu komutu çalıştırarak token’ı ekle (bir defalık):
+Then run the following command to add your token (only once):
 
 ngrok config add-authtoken <ngrok_auth_token>
 
-Tokenı https://dashboard.ngrok.com/get-started/setup adresinden alabilirsin.
+You can find your token here: https://dashboard.ngrok.com/get-started/setup
 
-##🌍 Yayına Aç
-Uygulama çalışıyorken yeni bir terminal aç ve şu komutu gir:
+🌍 Start Ngrok Tunnel
+While the application is running, open a new terminal and run:
 
 ngrok http 3000
 
-Ngrok sana bir HTTPS link verecek. Bu linki toplantıya katılmasını istediğin kişilerle paylaşabilirsin.
+Ngrok will provide you with an HTTPS link. Share this link with others to allow them to join the meeting.
 
-##📁 Dosya Yapısı
+###📁 Project Structure
 
-meeting-uygulamasi/
+meeting-app/
 ├── public/
 │   ├── index.html
 │   ├── script.js
@@ -62,22 +64,23 @@ meeting-uygulamasi/
 ├── package.json
 └── README.md
 
-## 📸 Ekran Görüntüleri
+## 📸 Screenshots
+Below are some screenshots from the application:
 
-Aşağıda uygulamaya ait bazı ekran görüntüleri yer almaktadır:
+![Login Page](image.png)
+![Left Panel](image-1.png)
+![Meeting Interface](image-2.png)
 
-![Kullanıcı Giriş Sayfası](image.png)
-![Sol Panel](image-1.png)
-![Toplantı Arayüzü](image-2.png)
+###📝 Notes
+Ngrok links are temporary. A new link is generated every time you start it.
 
-##📝 Notlar
-Ngrok linkleri geçicidir. Her başlatmada yeni link oluşur.
+To share the app, make sure to run node server.js and get a public link using ngrok http 3000.
 
-Projeyi başkalarıyla paylaşmak için node server.js komutunu çalıştırmayı ve ngrok http 3000 komutu ile erişim linki almayı unutma.
+Advanced features such as security and authentication are not included in this basic version.
 
-Güvenlik ve kimlik doğrulama gibi gelişmiş özellikler bu temel sürümde yer almamaktadır.
 
-##👩‍💻 Geliştirici
+
+##👩‍💻 Developer
 Bengü Elmas
 GitHub: @benguelmas
 
