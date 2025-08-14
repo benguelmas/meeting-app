@@ -15,27 +15,27 @@ Users can join rooms to communicate via real-time audio/video and send messages.
 
 ## ⚙️ Installation and Running the Project
 
-### 1. Clone the Repository
+### 1.:arrow_down: Clone the Repository
 
 bash
 git clone https://github.com/benguelmas/meeting-app.git
 cd meeting-app
 
 
-### 2. Install Dependencies
+### 2.:white_check_mark: Install Dependencies
 
 npm install
 
-### 3. Start the Server
+### 3.:desktop_computer: Start the Server
 
 node server.js
 
 Now, the application will be running at http://localhost:3000.
 
-### 🌐 Make It Public with Ngrok
+### 🌐 4.Make It Public with Ngrok
 Ngrok allows you to make your local server temporarily accessible from the internet.
 
-### 🔧 Install Ngrok
+### 🔧 5.Install Ngrok
 Download the appropriate version from: https://ngrok.com/download
 
 Unzip the file and place ngrok.exe in your project folder.
@@ -46,7 +46,7 @@ ngrok config add-authtoken <ngrok_auth_token>
 
 You can find your token here: https://dashboard.ngrok.com/get-started/setup
 
-🌍 Start Ngrok Tunnel
+### 🌍6. Start Ngrok Tunnel
 While the application is running, open a new terminal and run:
 
 ngrok http 3000
