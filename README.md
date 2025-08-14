@@ -32,10 +32,10 @@ node server.js
 
 Now, the application will be running at http://localhost:3000.
 
-🌐 Make It Public with Ngrok
+### 🌐 Make It Public with Ngrok
 Ngrok allows you to make your local server temporarily accessible from the internet.
 
-🔧 Install Ngrok
+### 🔧 Install Ngrok
 Download the appropriate version from: https://ngrok.com/download
 
 Unzip the file and place ngrok.exe in your project folder.
@@ -53,7 +53,7 @@ ngrok http 3000
 
 Ngrok will provide you with an HTTPS link. Share this link with others to allow them to join the meeting.
 
-###📁 Project Structure
+### 📁 Project Structure
 
 meeting-app/
 ├── public/
@@ -71,7 +71,7 @@ Below are some screenshots from the application:
 ![Left Panel](image-1.png)
 ![Meeting Interface](image-2.png)
 
-###📝 Notes
+### 📝 Notes
 Ngrok links are temporary. A new link is generated every time you start it.
 
 To share the app, make sure to run node server.js and get a public link using ngrok http 3000.
