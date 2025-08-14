@@ -15,18 +15,18 @@ Users can join rooms to communicate via real-time audio/video and send messages.
 
 ## ⚙️ Installation and Running the Project
 
-### 1:arrow_down: Clone the Repository
+### ⬇️ 1.Clone the Repository
 
 bash
 git clone https://github.com/benguelmas/meeting-app.git
 cd meeting-app
 
 
-### 2.:white_check_mark: Install Dependencies
+### ✅ 2.Install Dependencies
 
 npm install
 
-### 3.:desktop_computer: Start the Server
+### 🖥️ 3.Start the Server
 
 node server.js
 
