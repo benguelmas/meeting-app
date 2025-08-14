@@ -15,7 +15,7 @@ Users can join rooms to communicate via real-time audio/video and send messages.
 
 ## ⚙️ Installation and Running the Project
 
-### 1.:arrow_down: Clone the Repository
+### 1:arrow_down: Clone the Repository
 
 bash
 git clone https://github.com/benguelmas/meeting-app.git
