@@ -80,7 +80,7 @@ Advanced features such as security and authentication are not included in this b
 
 
 
-##👩‍💻 Developer
+## 👩‍💻 Developer
 Bengü Elmas
 GitHub: @benguelmas
 
